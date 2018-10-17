@@ -502,22 +502,23 @@ div .divider {
 
 /* Right side column */
 
-#advertising{
-    text-align:center;
-    height: 40em;
-    margin-left:auto;
-    margin-right:auto;
+.adcontainer {
+    height: 30em;
     background-color: white;
     border: 1px solid #cccccc;
     border-radius: 0.5em;
     box-shadow: 2px 2px 2px #888888;
+    float: left;
+    margin-left: .5em;
+    margin-right: .5em;
+    padding: 1em;
+    width: 100%;
+    max-width: 21em;
+}
+#advertising{
+    text-align:center;
     color: black;
     font-weight: normal;
-    margin-left: .5em;
-    margin-right: auto;
-    padding: 1em;
-    width: 25%;
-    float:left;
 }
 
 #advertising h2{

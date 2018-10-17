@@ -13,69 +13,69 @@
 	<div id="top-bar">&nbsp; </div>
 	<div class="page_wrapper">
 
-		<div id="header">
+		<div id="header" role="banner">
 			<div id="course_title_container" style="left:1em;">		
 				<h1 id="section-title">Our Community Website</h1>
 			</div>
 		</div>
 
-		<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav">
-			<div style="width: 100%;" id="topnavlistcontainer" aria-label="main navigation tabs">
+		<div class="" style="z-index: auto; position: static; top: auto;" id="lrg_topnav" role="navigation" aria-label="main navigation tabs">
+			<div style="width: 100%;" id="topnavlistcontainer">
 				<a name="main-nav" id="main-nav"></a>
-				<ul style="" id="topnavlist">
-					<li><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
-					<li><a href="landmarks.html" accesskey="2" title="Join Alt+2" class="active">Join</a></li>
-					<li><a href="" class="fake" accesskey="3" title="Photo Gallery Alt+3">Photo Gallery</a></li>
-					<li><a href="" class="fake" accesskey="4" title="Networking Alt+4">Networking</a></li>
-					<li><a href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a></li>
-					<li><a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li> 
+				<ul style="" id="topnavlist" role="menu">
+					<li role="menuitem"><a href="index.html" accesskey="1" title="Back to Index Alt+1">Back to Index</a></li>
+					<li role="menuitem"><a href="landmarks.html" accesskey="2" title="Join Alt+2" class="active">Join</a></li>
+					<li role="menuitem"><a href="" class="fake" accesskey="3" title="Photo Gallery Alt+3">Photo Gallery</a></li>
+					<li role="menuitem"><a href="" class="fake" accesskey="4" title="Networking Alt+4">Networking</a></li>
+					<li role="menuitem"><a href="" class="fake" accesskey="5" title="Login Alt+5">My Choice</a></li>
+					<li role="menuitem"><a href="" class="fake" accesskey="6" title="Exercise Home Alt+6">Exercises</a></li> 
 				</ul>
 			</div> 
 		</div>
 
-		<div class="logoutbar">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
-		<div class="crumbcontainer">
+		<div class="logoutbar" role="search">&nbsp; <input type="text" class="input"><input type="submit" value="search"></div>
+		<div class="crumbcontainer" role="navigation">
 			<div id="breadcrumbs" tabindex="0" aria-label="breadcrumb links">&nbsp;</div>
 		</div>
 		<div id="contentwrapper">
 			<div id="lrg_content">
-				<div id="leftcolumn">
+				<div id="leftcolumn" role="complimentary" aria-label="Network Information">
 					<a id="menu"></a>
 					<div id="side-menu" aria-label="left side menu" accesskey="0">
 						<br/>
-						<h2 class="box"><span>Networking</span></h2>
-						<div class="box" id="menu_Networking">
-							<ul class="social_side_menu">
-								<li><a href="" class="fake">My Network</a></li>
-								<li><a href="" class="fake">My Contacts</a></li>
-								<li><a href="" class="fake">Network Profile</a></li>
-								<li><a href="" class="fake">Gadgets</a></li>
-								<li><a href="" class="fake">Network Groups</a></li>
-								<li><a href="" class="fake">Settings</a></li>
+						<h2 class="box" id="networking_id"><span>Networking</span></h2>
+						<div class="box" id="menu_Networking" role="navigation" aria-labelledby="networking_id">
+							<ul class="social_side_menu" role="menu">
+								<li role="menuitem"><a href="" class="fake">My Network</a></li>
+								<li role="menuitem"><a href="" class="fake">My Contacts</a></li>
+								<li role="menuitem"><a href="" class="fake">Network Profile</a></li>
+								<li role="menuitem"><a href="" class="fake">Gadgets</a></li>
+								<li role="menuitem"><a href="" class="fake">Network Groups</a></li>
+								<li role="menuitem"><a href="" class="fake">Settings</a></li>
 							</ul>
 							<div class="divider"></div>
 						</div>
 						<br/>
-						<h2 class="box"><span>People Online</span></h2>
-						<div class="box" id="menu_UsersOnline">
+						<h2 class="box" id="people_online_id"><span>People Online</span></h2>
+						<div class="box" id="menu_UsersOnline" role="region" aria-labelledby="people_online_id" tabindex="0">
 							<ul style="padding: 0px; list-style: none;">
 								<li style="padding: 3px 0px;" id="mylogin">No one logged in</li>
 							</ul>
 						</div>
 						<br/>
 					</div>
-				</div>	<!-- //end of the left column -->	
-			</div>
+				</div>	<!-- //end "leftcolumn" -->	
+			</div>	<!-- //end "lrg_content" -->
 
 			<div id="contentcolumn">
-				<div id="message"></div>
+				<div id="message" role="alert"></div>
 				<br style="clear:both;">
 				<a id="top"></a>
 
-				<div class="profile">
-					<h2>Join our community</h2>
+				<div class="profile" role="main">
+					<h2 id="join_form_id">Join our community</h2>
 					<div id="feedback">&nbsp;</div>
-					<form id="join_form">
+					<form id="join_form" aria-labelledby="join_form_id">
 						<dl>
 							<dt>
 								<img src="images/required.gif" height="14" width="14" alt="Required Field" /> denotes required fields.<br />
@@ -212,21 +212,19 @@
 							<input type="button" id="reset_form" value="Reset" /><br />
 						</div>
 					</form>
-					<br  style="clear:both;"/>
-
-					<br style="width:100%;clear:both;" />
-
 				</div> <!-- end "main" -->
-				<div id="advertising">
-					<h2>Advertising</h2>
-				<div>
-				<img src="images/rum_cover.jpg" alt="" />
-				<br style="clear:both;"/>
+				<div class="adcontainer">
+					<div id="advertising" role="complementary" aria-labelledby="advertising_id" tabindex="0">
+						<h2 id="advertising_id">Advertising</h2>
+					<div>
+					<img src="images/rum_cover.jpg" alt="" />
+					<br style="clear:both;"/>
+				</div>
 			</div> <!-- end "contentcolumn" -->
 		</div> <!-- end "contentwrapper" -->
 	</div> <!-- end "page_wrapper" -->
 
-	<div id="footer"> Copyright &copy; <a href="" class="fake">Chang School.</a>
+	<div id="footer" role="contentinfo"> Copyright &copy; <a href="" class="fake">Chang School.</a>
 	</div>
 
 </body>
