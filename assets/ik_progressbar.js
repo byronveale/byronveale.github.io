@@ -37,7 +37,7 @@
 				'aria-valuenow': 0, // set current value to 0
 				'aria-valuemin': 0, // set minimum (start) value to 0 (required by screen readers)
 				'aria-valuemax': this.options.max, // set maximum (end) value
-				'aria-describedby': id + '_instructions' // add aria-describedby attribute
+				'aria-labelledby': id + '_instructions' // adding aria-labelledby instead of aria-describedby attribute to get around ChromeVox issue
 			})
 			.addClass('ik_progressbar')
 			.on('keydown.ik', {'plugin': this}, this.onKeyDown)
