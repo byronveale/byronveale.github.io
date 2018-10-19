@@ -102,24 +102,32 @@
                     $btn.attr('aria-expanded','false');
 					$hdr.next().slideUp(plugin.options.animationSpeed);
 					$hdr.next().attr('aria-hidden','true');
-				} else { 
-					$btn.addClass('expanded');
-                    $btn.attr('aria-expanded','true');
-					$hdr.next().slideDown(plugin.options.animationSpeed);
-					$hdr.next().attr('aria-hidden','false');
+				} else {
+                    isVisible = $hdr.next().is(':visible');
+                    // added logic to shut the accordion if it is open
+                    if (isVisible) {
+                        $btn.removeClass('expanded');
+                        $btn.attr('aria-expanded','false');
+                        $hdr.next().slideUp(plugin.options.animationSpeed);
+                        $hdr.next().attr('aria-hidden','true');
+					} else {
+                        $btn.addClass('expanded');
+                        $btn.attr('aria-expanded','true');
+                        $hdr.next().slideDown(plugin.options.animationSpeed);
+                        $hdr.next().attr('aria-hidden','false');
+                    }
 				}
 			});
 			
 		} else { // toggle current panel depending on the state
 
             isVisible = $panel.is(':visible');
-            // alert(isVisible);
             $panel.slideToggle({ duration: plugin.options.animationSpeed });
+            // updating aria attributes to match visual state
 			if (isVisible) {
                 $me.attr('aria-expanded','false');
                 $panel.attr('aria-hidden','true');
             } else {
-                // alert('in else', isVisible);
                 $me.attr('aria-expanded','true');
                 $panel.attr('aria-hidden','false');
 			}
