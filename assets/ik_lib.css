@@ -170,7 +170,7 @@ button[disabled]:focus {
 }
 .ik_accordion dt .button {
   padding: 10px 10px 10px 30px;
-  background-color: #f76;
+  background-color: #901;
   color: #fff;
   -webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
   -moz-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
@@ -191,12 +191,15 @@ button[disabled]:focus {
   transform: rotateZ(45deg);
   transition: transform .2s ease;
 }
+.ik_accordion dt .button.expanded {
+  background-color: #109;
+}
 .ik_accordion dt .button.expanded:before {
   transform: rotateZ(135deg);
 }
 .ik_accordion dt .button:hover,
 .ik_accordion dt .button:focus {
-  background-color: #ff8e80;
+  background-color: #3333cc;
 }
 .ik_accordion dt:first-of-type .button {
   -webkit-border-top-left-radius: 6px;

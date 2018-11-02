@@ -125,9 +125,11 @@
             $panel.slideToggle({ duration: plugin.options.animationSpeed });
             // updating aria attributes to match visual state
 			if (isVisible) {
+                $me.removeClass('expanded');
                 $me.attr('aria-expanded','false');
                 $panel.attr('aria-hidden','true');
             } else {
+                $me.addClass('expanded');
                 $me.attr('aria-expanded','true');
                 $panel.attr('aria-hidden','false');
 			}
