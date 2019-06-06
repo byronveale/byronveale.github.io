@@ -2,7 +2,7 @@
 
 	var pluginName = 'ik_menu',
 		defaults = {
-			'instructions': 'Use the right arrow key to enter this menu; the right and left arrow keys to navigate between menu items; the escape key to close this menu; and the enter key to activate menu items.'
+			'instructions': 'Use the tab key to leave this menu; the right and left or up and down arrow keys to navigate this menu; the escape key to close this menu; and the enter key to activate menu items.'
 		};
 
 	/**
@@ -203,7 +203,12 @@
 
 					event.stopPropagation();
 
-					showMenuFunction(event);
+					if ($me.hasClass('expanded')) {
+						hideMenuFunction(event);
+					}
+					else {
+						showMenuFunction(event);
+					}
 
 					break;
 			}
@@ -235,7 +240,7 @@
                     hideMenuFunction(event);
                 });
         */
-		$(window).on('resize', function(){ plugin.collapseAll(plugin); } ); // collapse all submenues when window is resized
+		$(window).on('resize', hideMenuFunction(event)); // collapse all submenues when window is resized
 
 	};
 
@@ -580,9 +585,7 @@
 
 				event.preventDefault();
 
-				if ($current.parents('ul').length == 1) {
-					$current.attr({'tabindex': -1}).next('li').focus();
-				}
+				$current.attr({'tabindex': -1}).next('li').focus();
 
 				break;
 
@@ -590,9 +593,7 @@
 
 				event.preventDefault();
 
-				if ($current.parents('ul').length == 1) {
-					$current.attr({'tabindex': -1}).prev('li').focus();
-				}
+				$current.attr({'tabindex': -1}).prev('li').focus();
 
 				break;
 
@@ -601,9 +602,7 @@
 				event.preventDefault();
 				event.stopPropagation();
 
-				if ($current.parents('ul').length > 1) {
-					$current.attr({'tabindex': -1}).prev('li').attr({'tabindex': 0}).focus();
-				}
+				$current.attr({'tabindex': -1}).prev('li').focus();
 
 				break;
 
@@ -612,9 +611,7 @@
 				event.preventDefault();
 				event.stopPropagation();
 
-				if($current.parents('ul').length > 1) {
-					$current.attr({'tabindex': -1}).next('li').attr({'tabindex': 0}).focus();
-				}
+				$current.attr({'tabindex': -1}).next('li').focus();
 
 				break;
 

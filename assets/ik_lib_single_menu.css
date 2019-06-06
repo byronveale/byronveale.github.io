@@ -448,6 +448,8 @@ button h2 {
   color: #fff;
 }
 
+button#menu_button:focus,
+button#menu_button:hover,
 .ik_menu ul.looking-for li:hover,
 .ik_menu ul.looking-for li:focus {
   background-color: #901;
