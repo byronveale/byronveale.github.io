@@ -5,37 +5,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>IK Library: Menu Navigation</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<link href="assets/ik_lib_single_menu.css" rel="stylesheet" type="text/css">
 		<script src="assets/ik_utils.js"></script>
 		<script src="assets/ik_single_menu.js"></script>
 		<script>
 
 			$(document).ready(function() {
-				
+
 				$(".menu").ik_menu();
-				
+
 			});
-			
+
 		</script>
 	</head>
 	<body>
 		<main>
 			<a href="index.html">&larr; Index</a>
 			<h1>Menu Navigation</h1>
+
 			<nav class="menu">
-				<ul>
-					<li><a href="#">I'm looking for…</a></span>
-						<ul>
-							<li><a href="#">Menu Item 1</a></li>
-							<li><a href="#">Menu Item 2</a></li>
-							<li><a href="#">Menu item 3</a></li>
-							<li><a href="#">Menu Item 4</a></li>
-							<li><a href="#">Menu Item 5</a></li>
-							<li><a href="#">Menu Item 6</a></li>
-							<li><a href="#">Menu Item 7</a></li>
-							<li><a href="#">Menu Item 8</a></li>
-						</ul>
-					</li>
+				<button id="menu_button">
+					<span>I'm looking for…</span>
+				</button>
+				<ul class="looking-for">
+					<li><a href="#">Menu Item 1</a></li>
+					<li><a href="#">Menu Item 2</a></li>
+					<li><a href="#">Menu item 3</a></li>
+					<li><a href="#">Menu Item 4</a></li>
+					<li><a href="#">Menu Item 5</a></li>
+					<li><a href="#">Menu Item 6</a></li>
+					<li><a href="#">Menu Item 7</a></li>
+					<li><a href="#">Menu Item 8</a></li>
 				</ul>
 			</nav>
 			<div class="content">
