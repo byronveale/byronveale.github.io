@@ -88,59 +88,17 @@
 					.addClass('i-m-a-menuitem');
 
 			});
-/*
-		plugin.selected = plugin.menuitems // setup selected menuitem
-			.find('.selected')
-			.attr({
-				'tabindex': 0,
-				'aria-selected': true
-			})
-		;
 
-		if (plugin.selected.length) {
-
-			plugin.menuitems
-				.eq(0)
-				.attr({
-					'tabindex': 0
-				})
-			;
-
-		} else {
-
-			plugin.selected
-				.parentsUntil('nav', 'ul')
-				.attr({ // setup submenus
-					'aria-expanded': true,
-					'tabindex': 0
-				})
-				.addClass('expanded');
-			;
-
-		}
-*/
 		plugin.menuitems // setup event handlers
-/*			.on('mouseenter', plugin.showSubmenu)
-			.on('mouseleave', plugin.hideSubmenu)
-*/			.on('click', {'plugin': plugin}, plugin.activateMenuItem)
-			.on("keydown", {'plugin': plugin}, plugin.onKeyDown)
-		;
-
-/*		plugin.menubutton // setup event handlers
-			.on('mouseenter', plugin.showMenu)
-			.on('mouseleave', plugin.hideMenu)
 			.on('click', {'plugin': plugin}, plugin.activateMenuItem)
 			.on("keydown", {'plugin': plugin}, plugin.onKeyDown)
-*/		;
+		;
 
 		$('button#menu_button').on({
 			focus: function(event){
 				showMenuFunction(event);
 			},
-/*			focusout: function(event){
-				hideMenuFunction(event);
-			},
-*/		});
+		});
 
 		$('button#menu_button').keydown(function(event){
 
@@ -162,8 +120,7 @@
 						.eq(0)
 						.focus()
 					;
-/*					alert('Right arrow pressed');
-*/
+
 					break;
 
 				case 40: // Down arrow
@@ -179,8 +136,7 @@
 						.eq(0)
 						.focus()
 					;
-/*					alert('Down arrow pressed');
-*/
+
 					break;
 
 				case 9: // Tab key
@@ -223,54 +179,7 @@
 			},
 		});
 
-		/*
-                $('button#menu_button').focus(function(event){
-                    showMenuFunction(event);
-                });
-
-                $('button#menu_button').focusout(function(event){
-                    hideMenuFunction(event);
-                });
-
-                $('button#menu_button').mouseenter(function(event){
-                    showMenuFunction(event);
-                });
-
-                $('nav.ik_menu').mouseleave(function(event){
-                    hideMenuFunction(event);
-                });
-        */
-		$(window).on('resize', hideMenuFunction(event)); // collapse all submenues when window is resized
-
 	};
-
-	/**
-	 * Shows submenu.
-	 *
-	 * @param {object} event - Mouse event.
-	 */
-/*	Plugin.prototype.showSubmenu = function(event) {
-
-		var $elem, $submenu;
-
-		$elem = $(event.currentTarget);
-		$submenu = $elem.children('ul');
-
-		if ($submenu.length) {
-			$elem.addClass('expanded')
-				.attr({
-					'aria-expanded': true,
-					'tabindex': -1
-				})
-			;
-		}
-
-		$submenu
-			.attr({
-				'aria-hidden': false
-			});
-	};
-*/
 
 	function showMenuFunction(event) {
 
@@ -285,8 +194,7 @@
 				.attr({
 					'aria-expanded': true,
 					'aria-hidden': false,
-/*					'tabindex': -1
-*/				})
+				})
 			;
 		}
 
@@ -303,8 +211,7 @@
 				$(this).children('a')
 					.attr({
 						'aria-hidden': false,
-/*						'tabindex': 0
-*/					})
+					})
 				;
 
 			});
@@ -321,9 +228,7 @@
 			$elem.removeClass('expanded')
 				.attr({
 					'aria-expanded': false,
-/*					'aria-hidden': true,
-					'tabindex': 0
-*/				})
+				})
 			;
 		}
 
@@ -340,156 +245,12 @@
 				$(this).children('a')
 					.attr({
 						'aria-hidden': true,
-/*						'tabindex': -1
-*/					})
-				;
-
-			});
-	}
-/*
-	function buttonKeyDownFunction(event) {
-
-		var plugin, $elem, $current, $next, $parent, $submenu, $selected;
-
-		plugin = event.data.plugin;
-		$elem = $(plugin.element);
-		$current = $(plugin.element).find(':focus');
-		$submenu = $current.next('ul');
-
-		switch (event.keyCode) {
-
-			case ik_utils.keys.right:
-
-				event.preventDefault();
-
-				$current.attr({'tabindex': -1}).next('li').attr({'tabindex': 0}).focus();
-
-
-				break;
-
-			case ik_utils.keys.down:
-
-				event.preventDefault();
-				event.stopPropagation();
-
-				if($current.parents('ul').length > 1) {
-					$current.attr({'tabindex': -1}).next('li').attr({'tabindex': 0}).focus();
-				}
-
-				break;
-		}
-
-	}
-*/
-
-	/**
-	 * Shows menu.
-	 *
-	 * @param {object} event - Mouse event.
-	 */
-/*	Plugin.prototype.showMenu = function(event) {
-
-		var $elem, $themenu, $menuitems;
-
-		$elem = $(event.currentTarget);
-		$themenu = $('button#menu_button').next('ul.looking-for');
-
-		if ($themenu.length) {
-			$elem.addClass('expanded')
-				.attr({
-					'aria-expanded': true,
-					'aria-hidden': false,
-					'tabindex': -1
-				})
-			;
-		}
-
-		$themenu
-			.addClass('expanded')
-			.attr({
-				'aria-expanded': true,
-				'aria-hidden': false
-			});
-
-		$themenu.find('li')
-			.each(function() {
-
-				$(this).children('a')
-					.attr({
-						'tabindex': 0,
-						'aria-hidden': false
 					})
 				;
 
 			});
+	}
 
-	};
-*/
-	/**
-	 * Hides menu.
-	 *
-	 * @param {object} event - Mouse event.
-	 */
-/*	Plugin.prototype.hideMenu = function(event) {
-
-		var $elem, $themenu, $menuitems;
-
-		$elem = $(event.currentTarget);
-		$themenu = $('button#menu_button').next('ul.looking-for');
-
-		if ($themenu.length) {
-			$elem.removeClass('expanded')
-				.attr({
-					'aria-expanded': false,
-					'aria-hidden': true,
-					'tabindex': 0
-				})
-			;
-		}
-
-		$themenu
-			.removeClass('expanded')
-			.attr({
-				'aria-expanded': false,
-				'aria-hidden': true,
-			});
-
-		$themenu.find('li')
-			.each(function() {
-
-				$(this).children('a')
-					.attr({
-						'tabindex': -1,
-						'aria-hidden': true
-					})
-				;
-
-			});
-
-	};
-*/
-	/**
-	 * Hides submenu.
-	 *
-	 * @param {object} event - Mouse event.
-	 */
-/*	Plugin.prototype.hideSubmenu = function(event) {
-
-		var $elem, $submenu;
-
-		$elem = $(event.currentTarget);
-		$submenu = $elem.children('ul');
-
-		if ($submenu.length) {
-			$elem.removeClass('expanded')
-				.attr({'aria-expanded': false})
-			;
-
-			$submenu.attr({'aria-hidden': true});
-			$submenu.children('li').attr({'tabindex': -1});
-		}
-	};
-*/
 	/**
 	 * Collapses all submenus. When element is specified collapses all submenus inside that element.
 	 *
