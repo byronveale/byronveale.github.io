@@ -321,8 +321,8 @@
 			$elem.removeClass('expanded')
 				.attr({
 					'aria-expanded': false,
-					'aria-hidden': true,
-/*					'tabindex': 0
+/*					'aria-hidden': true,
+					'tabindex': 0
 */				})
 			;
 		}
@@ -500,7 +500,8 @@
 
 		$elem = $elem || plugin.element;
 
-		$elem.find('[aria-hidden=false]').attr({'aria-hidden': true});
+		$elem.find('ul.looking-for').attr({'aria-hidden': true});
+		$elem.find('li.i-m-a-menuitem').attr({'aria-hidden': true});
 		$elem.find('.expanded').removeClass('expanded').attr({'aria-expanded': false});
 		$elem.find('li').attr({'tabindex': -1});
 	};
