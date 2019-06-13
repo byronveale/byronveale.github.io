@@ -399,6 +399,7 @@
 			case ik_utils.keys.enter:
 
 				plugin.activateMenuItem(event);
+				hideMenuFunction(event);
 
 				break;
 
