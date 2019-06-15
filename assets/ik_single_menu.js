@@ -66,7 +66,6 @@
 			.addClass('expandable');
 
 		plugin.menuitems = $elem.find('li') // setup menuitems
-			.css({ 'list-style': 'none' })
 			.each(function(i, el) {
 
 				var $me, $link;
@@ -85,7 +84,7 @@
 						'tabindex': -1,  // remove from tab order
 						'aria-label': $link.text() // label with link text
 					})
-					.addClass('i-m-a-menuitem');
+					.addClass('looking-for-menuitem');
 
 			});
 
@@ -262,7 +261,7 @@
 		$elem = $elem || plugin.element;
 
 		$elem.find('ul.looking-for').attr({'aria-hidden': true});
-		$elem.find('li.i-m-a-menuitem').attr({'aria-hidden': true});
+		$elem.find('li.looking-for-menuitem').attr({'aria-hidden': true});
 		$elem.find('.expanded').removeClass('expanded').attr({'aria-expanded': false});
 		$elem.find('li').attr({'tabindex': -1});
 	};
@@ -286,7 +285,8 @@
 		plugin.collapseAll(plugin);
 
 		if ($elem.has('a').length) {
-			alert('Menu item ' + $elem.find('>a').text() + ' selected');
+/*			alert('Menu item ' + $elem.find('>a').text() + ' selected');
+*/			$elem.next('>a').click();
 		}
 
 	};
