@@ -127,7 +127,7 @@ $(document).ready(function() {
                 event.preventDefault();
                 event.stopPropagation();
                 $(this)
-                    .next('ul.looking-for')
+                    .next('ul.menu-bar')
                     .children('li')
                     .eq(0)
                     .children('a.menu-item')
@@ -139,7 +139,7 @@ $(document).ready(function() {
                 event.preventDefault();
                 event.stopPropagation();
                 $(this)
-                    .next('ul.looking-for')
+                    .next('ul.menu-bar')
                     .children('li')
                     .eq(0)
                     .children('a.menu-item')
