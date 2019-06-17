@@ -115,9 +115,10 @@ button h2 {
 }
 .ik_tooltip {
   position: absolute;
-  max-width: 200px;
+  max-width: 400px;
   padding: 5px 10px;
-  left: 0;
+  left: 13px;
+  top: -4em;
   background-color: #ffd;
   font-size: 90%;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -435,6 +436,9 @@ button h2 {
   list-style: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+}
+nav.menu {
   position: relative;
 }
 /* nav.menu button:focus + ul, */ nav.menu button.expanded + ul {
@@ -446,6 +450,7 @@ button h2 {
 /*  transition: background-color 0.2s ease-in-out; */
   background-color: #ff8e80;
   color: #fff;
+  padding: 0.5em 13px;
 }
 
 button#menu_button:focus,

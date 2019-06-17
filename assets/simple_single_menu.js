@@ -4,6 +4,8 @@ $(document).ready(function() {
 
     var menuButton = menuNav.children('button#menu_button');
 
+    var menuInstructions = menuNav.children('#menu_instructions');
+
     var menuBar = menuButton.next('ul');
 
     var menuListItems = menuBar.children('li');
@@ -53,6 +55,10 @@ $(document).ready(function() {
             .attr('aria-expanded', 'true')
         ;
 
+        menuInstructions
+            .addClass('visible')
+        ;
+
         bar
             .addClass('expanded')
             .attr('aria-expanded', 'true')
@@ -68,6 +74,10 @@ $(document).ready(function() {
         button
             .removeClass('expanded')
             .attr('aria-expanded', 'false')
+        ;
+
+        menuInstructions
+            .removeClass('visible')
         ;
 
         bar
