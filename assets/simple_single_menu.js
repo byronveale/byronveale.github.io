@@ -55,10 +55,6 @@ $(document).ready(function() {
             .attr('aria-expanded', 'true')
         ;
 
-        menuInstructions
-            .addClass('visible')
-        ;
-
         bar
             .addClass('expanded')
             .attr('aria-expanded', 'true')
@@ -76,14 +72,30 @@ $(document).ready(function() {
             .attr('aria-expanded', 'false')
         ;
 
-        menuInstructions
-            .removeClass('visible')
-        ;
-
         bar
             .removeClass('expanded')
             .attr('aria-expanded', 'false')
             .attr('aria-hidden', 'true')
+        ;
+    }
+
+    menuButton.on('focus', function(event) {
+        showInstructions(menuInstructions);
+    });
+
+    function showInstructions(instructions){
+        instructions
+            .addClass('visible')
+        ;
+    }
+
+    menuButton.on('blur', function(event) {
+        hideInstructions(menuInstructions);
+    });
+
+    function hideInstructions(instructions){
+        instructions
+            .removeClass('visible')
         ;
     }
 
