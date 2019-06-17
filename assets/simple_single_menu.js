@@ -66,7 +66,7 @@ $(document).ready(function() {
         ;
     }
 
-    menuNav.on('mouseleave', function(event) {
+    menuNav.on('mouseleave blur', function(event) {
         hideMenu(menuButton, menuBar, menuListItems, menuLinks);
     });
 
@@ -122,6 +122,18 @@ $(document).ready(function() {
                     .focus()
                 ;
                 break;
+
+            case 39: // Right arrow
+                event.preventDefault();
+                event.stopPropagation();
+                $(this)
+                    .next('ul.looking-for')
+                    .children('li')
+                    .eq(0)
+                    .children('a.menu-item')
+                    .focus()
+                ;
+                break;
         }
     });
 
@@ -143,7 +155,39 @@ $(document).ready(function() {
                 }
                 break;
 
+            case 39: // Right arrow
+                event.preventDefault();
+                event.stopPropagation();
+                // If last list item, set focus on first item.
+                if ($(this).parent('li').hasClass('last')) {
+                    $(this).parents('ul.menu-bar').children('li.first').children('a').focus();
+                } else {
+                    $(this)
+                        .parent('li.menu-list-item')
+                        .next('li.menu-list-item')
+                        .children('a.menu-item')
+                        .focus()
+                    ;
+                }
+                break;
+
             case 38: // Up arrow
+                event.preventDefault();
+                event.stopPropagation();
+                // If first list item, set focus on last item.
+                if ($(this).parent('li').hasClass('first')) {
+                    $(this).parents('ul.menu-bar').children('li.last').children('a').focus();
+                } else {
+                    $(this)
+                        .parent('li')
+                        .prev('li')
+                        .children('a')
+                        .focus()
+                    ;
+                }
+                break;
+
+            case 37: // Left arrow
                 event.preventDefault();
                 event.stopPropagation();
                 // If first list item, set focus on last item.
