@@ -108,6 +108,7 @@ $(document).ready(function() {
 
             case 27: // Escape key
                 hideMenu(menuButton, menuBar, menuListItems, menuLinks);
+                $(this).blur();
                 break;
         }
     });
@@ -126,6 +127,9 @@ $(document).ready(function() {
             case 40: // Down arrow
                 event.preventDefault();
                 event.stopPropagation();
+                if (!$(this).hasClass('expanded')) {
+                    showMenu(menuButton, menuBar, menuListItems, menuLinks);
+                }
                 $(this)
                     .next('ul.menu-bar')
                     .children('li')
@@ -138,6 +142,9 @@ $(document).ready(function() {
             case 39: // Right arrow
                 event.preventDefault();
                 event.stopPropagation();
+                if (!$(this).hasClass('expanded')) {
+                    showMenu(menuButton, menuBar, menuListItems, menuLinks);
+                }
                 $(this)
                     .next('ul.menu-bar')
                     .children('li')
